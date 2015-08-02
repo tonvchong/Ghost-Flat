@@ -30,11 +30,13 @@
     <div class="row">
         <div class="col-lg-12 centered text-center container-withcover {{^if post.image}}no-cover{{/if}}" style="{{#if post.image}}background-image: url({{post.image}});{{/if}}">
             <h1>{{post.title}}</h1>
-            {{^if post.page}}
+            {{#is "post"}}
             <h5>
+                {{#post}}
                 <time datetime="{{date format='YYYY-MM-DD'}}"><span class="mega-octicon octicon-calendar"></span> {{date format="YYYY-MM-DD"}} at {{date format="HH:mm"}}</time>
+                {{/post}}
             </h5>
-            {{/if}}
+            {{/is}}
             {{#foreach post.tags}}
             <a href="{{url}}"><span class="label {{#if @odd}}label-primary{{else}}label-default{{/if}}"><i class="glyphicon glyphicon-tag"></i> {{name}}</span></a>
             &nbsp;
