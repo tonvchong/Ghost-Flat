@@ -2,7 +2,12 @@
 <div class="container-fluid container-abitabove">
     <div class="row">
         <div class="col-lg-12 centered text-center container-withcover {{^if @blog.cover}}no-cover{{/if}}" style="{{#if @blog.cover}}background-image: url({{@blog.cover}});{{/if}}">
-            {{#if @blog.logo}}<img src="{{@blog.logo}}" alt="{{@blog.title}} Logo" class="blog-logo"><br>{{/if}}{{@blog.title}}
+            {{#if @blog.logo}}<img src="{{@blog.logo}}" alt="{{@blog.title}} Logo" class="blog-logo">
+            <br>
+            {{/if}}
+            <h1>{{@blog.title}}</h1>
+            <br>
+            <h2>{{@blog.description}}</h2>
         </div>
     </div>
 </div>
@@ -13,13 +18,13 @@
     <div class="row">
         <div class="col-lg-12 centered text-center container-withcover {{^if tag.image}}no-cover{{/if}}" style="{{#if tag.image}}background-image: url({{tag.image}});{{/if}}">
             <h1>{{tag.name}}</h1>
-            <h5>
+            <h3>
                 {{#if tag.description}}
                     {{tag.description}}
                 {{else}}
                     A {{pagination.total}}-post collection
                 {{/if}}
-            </h5>
+            </h3>
         </div>
     </div>
 </div>
@@ -31,11 +36,11 @@
         <div class="col-lg-12 centered text-center container-withcover {{^if post.image}}no-cover{{/if}}" style="{{#if post.image}}background-image: url({{post.image}});{{/if}}">
             <h1>{{post.title}}</h1>
             {{#is "post"}}
-            <h5>
+            <h3>
                 {{#post}}
                 <time datetime="{{date format='YYYY-MM-DD'}}"><span class="mega-octicon octicon-calendar"></span> {{date format="YYYY-MM-DD"}} at {{date format="HH:mm"}}</time>
                 {{/post}}
-            </h5>
+            </h3>
             {{/is}}
             {{#foreach post.tags}}
             <a href="{{url}}"><span class="label {{#if @odd}}label-primary{{else}}label-default{{/if}}"><i class="glyphicon glyphicon-tag"></i> {{name}}</span></a>
