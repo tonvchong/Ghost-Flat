@@ -13,6 +13,23 @@
 </div>
 {{/is}}
 
+{{#is "author"}}
+<div class="container-fluid container-abitabove">
+    <div class="row">
+      {{#author}}
+      <div class="col-lg-12 centered text-center container-withcover {{^if cover}}no-cover{{/if}}" style="{{#if cover}}background-image: url({{cover}});{{/if}}">
+        {{#if image}}<img src="{{image}}" alt="{{name}}'s Logo" class="blog-logo">
+        <br>
+        {{/if}}
+        <h1>{{name}}</h1>
+        <br>
+        <h2>{{bio}}</h2>
+      </div>
+      {{/author}}
+    </div>
+</div>
+{{/is}}
+
 {{#is "tag"}}
 <div class="container-fluid container-abitabove">
     <div class="row">
