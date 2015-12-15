@@ -329,7 +329,7 @@ a:hover{
     background-position:center top;
     background-size: cover;
     font-weight: normal;
-    color: black;
+    color: #818181;
     padding-top: 1em;
     padding-bottom: 2em;
 }
@@ -402,7 +402,6 @@ a:hover{
 .author-link > img {
     display: inline!important;
     height: 16px;
-    vertical-align: bottom;
 }
 
 h4.events-heading {
